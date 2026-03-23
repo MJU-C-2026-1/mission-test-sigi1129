@@ -2,16 +2,16 @@
 /*
        여러줄 주석 
      프로그램 : main.c
-     작 성 자 : 정준식, 26-03-16
+     작 성 자 : mju, 26-03-16
      하 는 일 : 화면에 hello world를 출력!!!
 */
 
 // 2. 전처리기
 #include <stdio.h>           // 표준 입출력 포함( include)
-#include <stdlib.h>
+#include <stdlib.h>       // system 함수를불러옴
 
 // 3. main 함수
-int main()
+int main(void)
 {
 	system("chcp 65001");      // 한글로 나오게
 	
