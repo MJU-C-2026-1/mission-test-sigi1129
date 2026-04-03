@@ -1,51 +1,16 @@
-//전처리기
-#include <stdio.h>
-#include <stdlib.h>
+1.	시나리오 제목
+축구 선수 경기 기대득점 및 평점 계산 프로그램
 
-//int main()
-int main()
-{
-	system("chcp 65001");
-    char playername[20];
-	int goal;
-	int successfulpass;
-	int shot;
-	double dribblesSuccess;
-	double rating;	
-	double expected_goals;
-	
-	printf("==================================================\n");
-	printf("축구 선수 경기 기대득점 및 경기 평점 계산 프로그램\n");
-    printf("==================================================\n");
-    
-    printf("선수 이름을 입력하시오 :  ");
-    scanf("%s", playername);
-	
-	printf("득점수를 입력하시오 : ");
-    scanf("%d", &goal);
-    
-	printf("성공한 패스 횟수를 입력하시오 : ");
-    scanf("%d", &successfulpass);
-   
-    printf("슛팅 횟수를 입력하시오 : ");
-    scanf("%d", &shot);
-	
-	printf("드리블 성공률을 입력하시오(예72.4) : ");
-    scanf("%lf", &dribblesSuccess);
-	
-	
-	expected_goals = (shot * 0.15) + (goal * 0.3) + (successfulpass * 0.01);
-    rating = 5.0 + (goal * 0.4) + (successfulpass * 0.015) + (shot * 0.2) + (dribblesSuccess * 0.02);
 
-    printf("\n=========== 경기 기록 결과 ===========\n");
-    printf("선수 이름: %s\n", playername);
-    printf("득점수: %d\n", goal);
-    printf("패스성공횟수: %d\n", successfulpass);
-    printf("슈팅: %d\n", shot);
-    printf("드리블 성공률 : %.1lf%%\n", dribblesSuccess);
-    printf("기대득점(xG): %.2lf\n", expected_goals);
-    printf("경기 평점 : %.2lf\n", rating);
-    printf("======================================\n");
+2.	시나리오 (5~6줄)
+이 프로그램은 축구 경기에서의 선수들의 기록을 기반으로 그 경기에서의 기대 득점과 평점을 계산해주는 ‘축구 선수 경기 기대득점 및 평점 계산 프로그램’ 입니다.
 
-    return 0;
-}
+사용자는 한 축구선수의 경기에서의 기본적인 정보(이름, 득점 수, 성공한 패스 횟수, 슛팅 횟수, 드리블 성공률)로 실제 경기 지표를 입력합니다. 시스템은 이를 바탕으로 기대득점은 공격에 필요한 슛, 성공한 패스, 득점 수로 계산을 하게 되고 모든 정보들을 가지고 그 경기에서의 선수의 평점을 계산하게 됩니다. 평점은 최소 5.0 최대 10.0으로 부여 받습니다. 최종적으로 한눈에 알아보기 쉽게 경기에서의 정보, 평점, 기대득점을 보여주도록 리포트를 보여주는 시스템을 완성할 계획입니다. 이를 통해 팀의 전력을 분석 할 수 있도록 도와주는 게 목적입니다.
+
+
+3.	예상 기능 및 메뉴 
+-	선수 기본 정보 및 기록 입력
+-	기대득점(xG) 계산
+-	경기의 평점 계산
+-	경기에서의 총 결과 리포트
+-	시스템 종료
