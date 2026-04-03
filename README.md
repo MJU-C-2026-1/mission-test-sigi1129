@@ -1,21 +1,51 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wKJi-A3m)
-# 🔵 C 언어 수업 실습 제출 안내 (Dev C++ 병행 )
-여러분이 오늘 수업 시간에 얼마나 성실하게 참여했는지를 확인하기 위한 공간입니다 <br>
-본인의 실력을 증명하고 성실도를 인정받는 소중한 기록지가 될 것입니다(No pressure) 😊
+//전처리기
+#include <stdio.h>
+#include <stdlib.h>
 
----
-
-### 🎯 [Phase 1] 1~2교시: Dev C++ 실습 및 제출
-1. **Dev C++ 실습**: 수업 시간에 배운 코드를 본인의 PC에서 작성하고 실행합니다.
-2. **깃허브 업로드**: 작성한 코드(main.c 등)을 업로드 한다 (복사-붙여넣기도 가능)
-3. **결과 확인**: 업로드 후 1분 뒤 이름 옆에 나타나는 기호를 확인합니다.
-- ✅ 표시: 성공 , ❌ 표시: 코드 오류 또는 조건 미달 (수정 후 다시 제출 가능-옵션)
-
----  
-  
-### 🚀 과제 제출 단계 (반드시 완료하세요!)
-파일을 수정한 후, 아래 **3단계**를 거쳐야 성실도가 인정됩니다.
-1. 왼쪽 **가지 모양 아이콘**(Source Control) 클릭
-2. 메시지 칸에 "실습완료-자신이름" 입력 후 **[Commit]** 클릭
-3. 파란색 **동기화[Sync Changes] 버튼**을 눌러 최종 제출
+//int main()
+int main()
+{
+	system("chcp 65001");
+    char playername[20];
+	int goal;
+	int successfulpass;
+	int shot;
+	double dribblesSuccess;
+	double rating;	
+	double expected_goals;
+	
+	printf("==================================================\n");
+	printf("축구 선수 경기 기대득점 및 경기 평점 계산 프로그램\n");
+    printf("==================================================\n");
+    
+    printf("선수 이름을 입력하시오 :  ");
+    scanf("%s", playername);
+	
+	printf("득점수를 입력하시오 : ");
+    scanf("%d", &goal);
+    
+	printf("성공한 패스 횟수를 입력하시오 : ");
+    scanf("%d", &successfulpass);
    
+    printf("슛팅 횟수를 입력하시오 : ");
+    scanf("%d", &shot);
+	
+	printf("드리블 성공률을 입력하시오(예72.4) : ");
+    scanf("%lf", &dribblesSuccess);
+	
+	
+	expected_goals = (shot * 0.15) + (goal * 0.3) + (successfulpass * 0.01);
+    rating = 5.0 + (goal * 0.4) + (successfulpass * 0.015) + (shot * 0.2) + (dribblesSuccess * 0.02);
+
+    printf("\n=========== 경기 기록 결과 ===========\n");
+    printf("선수 이름: %s\n", playername);
+    printf("득점수: %d\n", goal);
+    printf("패스성공횟수: %d\n", successfulpass);
+    printf("슈팅: %d\n", shot);
+    printf("드리블 성공률 : %.1lf%%\n", dribblesSuccess);
+    printf("기대득점(xG): %.2lf\n", expected_goals);
+    printf("경기 평점 : %.2lf\n", rating);
+    printf("======================================\n");
+
+    return 0;
+}
