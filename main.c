@@ -7,6 +7,8 @@
 
 	*/
 
+    
+
 //2. 전처리기
 #include <stdio.h>
 #include <stdlib.h>
